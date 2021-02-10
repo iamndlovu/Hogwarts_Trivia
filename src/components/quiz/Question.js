@@ -10,7 +10,7 @@ const Question = ({ question }) => {
 				color: "#f9f7f7",
 			}}
 		>
-			{ question }
+			{question}
 		</p>
 	);
 };
