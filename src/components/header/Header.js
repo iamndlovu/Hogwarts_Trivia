@@ -9,7 +9,8 @@ const headerStyle = {
 	fontFamily: "'Great Vibes', cursive",
 	fontWeight: "500",
 	background: "#112d4e",
-	color: "#dbe2ef"
+	color: "#dbe2ef",
+	height: "5rem"
 };
 
 const Header = ({appLogo, appName}) => {
