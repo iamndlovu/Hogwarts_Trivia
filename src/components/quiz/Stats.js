@@ -1,12 +1,15 @@
 import React from "react";
 
-const Stats = ({ questionNo, totalQuestions, score, highScore }) => {
+const Stats = ({ stats }) => {
+
+	let { questionNo, totalQuestions, score, highScore } = stats;
+
 	return (
 		<section className="Stats">
 			<div
 				style={{
 					textAlign: "left",
-					margin: "1rem 0",
+					marginBottom: "1rem",
 				}}
 			>
 				<span style={{ fontWeight: "500" }}>Question</span> {"   "} {questionNo}{" "}
