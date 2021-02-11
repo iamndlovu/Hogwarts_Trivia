@@ -5,7 +5,10 @@ const Stats = ({ stats }) => {
 	let { questionNo, totalQuestions, score, highScore } = stats;
 
 	return (
-		<section className="Stats">
+		<section className="Stats" style={{
+			height: "5rem",
+			borderBottom: "1px solid #555"
+		}}>
 			<div
 				style={{
 					textAlign: "left",

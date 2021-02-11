@@ -6,7 +6,6 @@ const containerStyle = {
 	background: "#3f72af",
 	width: "100%",
 	minHeight: "10rem",
-	marginTop: "25%",
 	padding: "15px 7px",
 	textAlign: "left",
 	borderRadius: "11px",
