@@ -11,14 +11,16 @@ const containerStyle = {
 	borderRadius: "11px",
 };
 
-const QuestionContainer = () => {
+const QuestionContainer = ({ questionAndOptions }) => {
+	const { question, options } = questionAndOptions;
+
 	return (
 		<div className="QuestionContainer" style={containerStyle}>
-			<Question question={`Enim voluptate do tempor?`} />
+			<Question question={ question } />
 			<br />
 			<hr />
 			<br />
-			<Options />
+			<Options options={ options } />
 		</div>
 	);
 };

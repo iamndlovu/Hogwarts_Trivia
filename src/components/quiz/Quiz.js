@@ -4,24 +4,27 @@ import QuestionContainer from "./QuestionContainer.js";
 
 const quizStyle = {
 	background: "#ffd7003d",
-	height: "calc(100vh - 5rem - 2rem)",
+	minHeight: "calc(100vh - 5rem - 2rem)",
 	padding: "1rem",
 };
 
-const Quiz = () => {
+const Quiz = ({ quizData }) => {
+	const { stats, quizQuestions } = quizData;
+
 	return (
 		<main className="Quiz" style={quizStyle}>
 			<Stats
-				stats={{ questionNo: 1, totalQuestions: 20, score: 0, highScore: 15 }}
+				stats={ stats }
 			/>
 			<div style={{
 				display: "flex",
 				alignItems: "center",
 				justifyContent: "center",
 				width: "100%",
-				height: "calc(100% - 5rem)"
+				paddingTop: "1rem",
+				minHeight: "calc(100vh - 14rem)"
 			}}>
-				<QuestionContainer />
+				<QuestionContainer questionAndOptions={ quizQuestions[stats.questionNo - 1] } />
 			</div>
 		</main>
 	);
