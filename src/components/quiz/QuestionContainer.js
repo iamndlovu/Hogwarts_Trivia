@@ -11,7 +11,7 @@ const containerStyle = {
 	borderRadius: "11px",
 };
 
-const QuestionContainer = ({ questionAndOptions }) => {
+const QuestionContainer = ({ questionAndOptions, handleClick }) => {
 	const { question, options } = questionAndOptions;
 
 	return (
@@ -20,7 +20,7 @@ const QuestionContainer = ({ questionAndOptions }) => {
 			<br />
 			<hr />
 			<br />
-			<Options options={ options } />
+			<Options options={ options } handleClick={ handleClick } />
 		</div>
 	);
 };

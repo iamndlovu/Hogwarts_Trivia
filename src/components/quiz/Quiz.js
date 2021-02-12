@@ -8,7 +8,7 @@ const quizStyle = {
 	padding: "1rem",
 };
 
-const Quiz = ({ quizData }) => {
+const Quiz = ({ quizData, handleClick }) => {
 	const { stats, quizQuestions } = quizData;
 
 	return (
@@ -24,7 +24,7 @@ const Quiz = ({ quizData }) => {
 				paddingTop: "1rem",
 				minHeight: "calc(100vh - 14rem)"
 			}}>
-				<QuestionContainer questionAndOptions={ quizQuestions[stats.questionNo - 1] } />
+				<QuestionContainer questionAndOptions={ quizQuestions[stats.questionNo - 1] } handleClick={ handleClick } />
 			</div>
 		</main>
 	);

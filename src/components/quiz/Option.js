@@ -8,10 +8,12 @@ const optionStyle = {
 	cursor: "pointer"
 };
 
-const Option = ({option}) => {
+const Option = ({ option, handleClick }) => {
+	const { text, correct } = option;
+
 	return (
-		<p className="Option" style={optionStyle} onClick={()=>console.log(true)}>
-			{ option.text }
+		<p className="Option" style={optionStyle} onClick={()=>handleClick(correct)}>
+			{ text }
 		</p>
 	)
 }
