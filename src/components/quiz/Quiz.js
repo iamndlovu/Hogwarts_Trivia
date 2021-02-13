@@ -9,10 +9,10 @@ const quizStyle = {
 	padding: "1rem",
 };
 
-const Quiz = ({ quizData, handleClick }) => {
+const Quiz = ({ quizData, handleClick, restart }) => {
 	const { stats, quizQuestions } = quizData;
 
-		const displayContent = (stats.finished && <FinishedComp stats={ stats } />) ||
+		const displayContent = (stats.finished && <FinishedComp stats={ stats } restart={ restart } />) ||
 			(
 				<React.Fragment>
 					<Stats

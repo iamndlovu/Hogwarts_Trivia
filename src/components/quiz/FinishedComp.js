@@ -1,6 +1,6 @@
 import React from 'react'
 
-const FinishedComp = ({ stats }) => {
+const FinishedComp = ({ stats, restart }) => {
   const { totalQuestions, score, highScore } = stats;
 
   return (
@@ -36,7 +36,7 @@ const FinishedComp = ({ stats }) => {
             <li><span style={{ fontWeight: "500" }}>High Score</span>: { ` ${100 * highScore / totalQuestions}%` }</li>
           </ul>
         </section>
-      <button style={{
+      <button onClick={ restart } style={{
         padding: "1rem 2rem",
         margin: "1rem",
         fontSize: "1.2rem",

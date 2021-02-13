@@ -50,10 +50,19 @@ class App extends Component {
 
   } // constructor end
 
-  // TODO: finish quiz
+  // finish quiz
   finish = () => {
     this.setState({
       finished: true
+    });
+  }
+
+  //restart quiz
+  restart = () => {
+    this.setState({
+      questionNo: 1,
+      score: 0,
+      finished: false
     });
   }
 
@@ -96,7 +105,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header appLogo={ appLogo } appName="Hogwarts Trivia" />
-        <Quiz quizData={ quizData } handleClick={ this.handleClick } />
+        <Quiz quizData={ quizData } handleClick={ this.handleClick } restart={ this.restart } />
         <Footer appName="Hogwarts Trivia" />
       </div>
     );
