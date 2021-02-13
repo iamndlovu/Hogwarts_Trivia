@@ -1,6 +1,7 @@
 import React from "react";
 import Stats from "./Stats";
 import QuestionContainer from "./QuestionContainer.js";
+import FinishedComp from "./FinishedComp";
 
 const quizStyle = {
 	background: "#ffd7003d",
@@ -11,21 +12,28 @@ const quizStyle = {
 const Quiz = ({ quizData, handleClick }) => {
 	const { stats, quizQuestions } = quizData;
 
+		const displayContent = (stats.finished && <FinishedComp stats={ stats } />) ||
+			(
+				<React.Fragment>
+					<Stats
+						stats={ stats }
+					/>
+					<div style={{
+						display: "flex",
+						alignItems: "center",
+						justifyContent: "center",
+						width: "100%",
+						paddingTop: "1rem",
+						minHeight: "calc(100vh - 14rem)"
+					}}>
+						<QuestionContainer questionAndOptions={ quizQuestions[stats.questionNo - 1] } handleClick={ handleClick } />
+					</div>
+				</React.Fragment>
+			);
+
 	return (
 		<main className="Quiz" style={quizStyle}>
-			<Stats
-				stats={ stats }
-			/>
-			<div style={{
-				display: "flex",
-				alignItems: "center",
-				justifyContent: "center",
-				width: "100%",
-				paddingTop: "1rem",
-				minHeight: "calc(100vh - 14rem)"
-			}}>
-				<QuestionContainer questionAndOptions={ quizQuestions[stats.questionNo - 1] } handleClick={ handleClick } />
-			</div>
+			{ displayContent }
 		</main>
 	);
 };

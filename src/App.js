@@ -44,14 +44,17 @@ class App extends Component {
       questionNo: 1,
       totalQuestions: this.quizQuestions.length,
       score: 0,
-      highScore: Number(JSON.parse(localStorage.getItem("Hogwarts_Trivia_High_Score")))
+      highScore: Number(JSON.parse(localStorage.getItem("Hogwarts_Trivia_High_Score"))),
+      finished: false
     }
 
   } // constructor end
 
   // TODO: finish quiz
   finish = () => {
-    console.log('done')
+    this.setState({
+      finished: true
+    });
   }
 
   //handle click on options
