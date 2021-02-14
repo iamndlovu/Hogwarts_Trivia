@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Header from "./components/header/Header";
-import Quiz from './components/quiz/Quiz'
-import Footer from './components/footer/Footer'
+import Quiz from './components/quiz/Quiz';
+import Questions from './Questions'
+import Footer from './components/footer/Footer';
 import appLogo from "./Hogwarts-Logo.png";
 import "./App.css";
 
@@ -13,32 +14,7 @@ class App extends Component {
       localStorage.setItem("Hogwarts_Trivia_High_Score", JSON.stringify(highScore));
     }
   
-    this.quizQuestions = [
-      {
-        question: `Enim voluptate do tempor?1`,
-        options: [
-          { text: "Nulla est proident eu quis.", correct: true },
-          { text: "Officia aliquip laborum.", correct: false },
-          { text: "Lorem ipsum non consectetur laborum.", correct: false },
-        ]
-      },
-      {
-        question: `Enim voluptate do tempor?2`,
-        options: [
-          { text: "Nulla est proident eu quis.", correct: true },
-          { text: "Officia aliquip laborum.", correct: false },
-          { text: "Lorem ipsum non consectetur laborum.", correct: false },
-        ]
-      },
-      {
-        question: `Enim voluptate do tempor?3`,
-        options: [
-          { text: "Nulla est proident eu quis.", correct: true },
-          { text: "Officia aliquip laborum.", correct: false },
-          { text: "Lorem ipsum non consectetur laborum.", correct: false },
-        ]
-      }
-    ]; // questions end
+    this.quizQuestions = Questions; // questions end
 
     this.state = {
       questionNo: 1,

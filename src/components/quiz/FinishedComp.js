@@ -32,11 +32,12 @@ const FinishedComp = ({ stats, restart }) => {
           }}></i>
           <ul style={{ listStyle: "none" }}>
             <li><span style={{ fontWeight: "500" }}>Questions Attempted</span>: { ` ${totalQuestions}` }</li>
-            <li><span style={{ fontWeight: "500" }}>Your Score</span>: { ` ${100 * score / totalQuestions}%` }</li>
-            <li><span style={{ fontWeight: "500" }}>High Score</span>: { ` ${100 * highScore / totalQuestions}%` }</li>
+            <li><span style={{ fontWeight: "500" }}>Your Score</span>: { ` ${score}` }</li>
+            <li><span style={{ fontWeight: "500" }}>High Score</span>: { ` ${highScore}` }</li>
           </ul>
         </section>
       <button onClick={ restart } style={{
+        cursor: "pointer",
         padding: "1rem 2rem",
         margin: "1rem",
         fontSize: "1.2rem",
